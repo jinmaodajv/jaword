@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4855116 */
+  src: url('//at.alicdn.com/t/c/font_4855116_a1v6gnkvs7.woff2?t=1741960785982') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4855116_a1v6gnkvs7.woff?t=1741960785982') format('woff'),
+       url('//at.alicdn.com/t/c/font_4855116_a1v6gnkvs7.ttf?t=1741960785982') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-yinpin:before {
+  content: "\e6df";
+}
+
+.icon-zhankai:before {
+  content: "\e71a";
+}
+
+.icon-sousuo:before {
+  content: "\e652";
+}
+
+.icon-dingdan:before {
+  content: "\e897";
+}
+
+.icon-wode:before {
+  content: "\e61a";
+}
+
+.icon-shequ:before {
+  content: "\e8b8";
+}
+
+.icon-wode1:before {
+  content: "\e8bb";
+}
+
+.icon-shequ1:before {
+  content: "\e8c5";
+}
+
+.icon-wode2:before {
+  content: "\e8c6";
+}
+
+.icon-shouye1:before {
+  content: "\e8c7";
+}
+
+.icon-shouye2:before {
+  content: "\e6c8";
+}
+
+.icon-shouye:before {
+  content: "\e651";
+}

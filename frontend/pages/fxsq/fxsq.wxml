@@ -1,0 +1,90 @@
+<!--pages/fxsq/fxsq.wxml-->
+
+
+
+
+
+<scroll-view scroll-y enable-flex style="height: 100vh;">
+  <!-- 整个区域 -->
+  <view wx:for="{{shareData}}" wx:key="id" style="height: 500rpx;background-color: rgb(236, 233, 236);margin: 20rpx;border-radius: 10rpx;">
+    
+    <!-- 头部头像和名称 -->
+    <view style="margin: 20rpx;background-color: rgb(236, 233, 236);display: flex;border-radius: 10rpx;">
+      <image style="margin: 10rpx;" class="image_5" src="{{item.user.avatar}}"/>
+      <text class="text-name" style="margin-top: 40rpx;margin-left: 50rpx;">{{item.user.name}}</text>
+      <text catchtap="cxWord" 
+            data-id="{{item.wl.id}}"
+            data-wordcount="{{item.wl.wordcount}}"  class="text-xc" style="margin-top: 47rpx; margin-left: 140rpx;">点击查看详情</text>
+    </view>
+
+    <!-- 词汇集名称 78, 245, 245-->
+    <view style="margin: 20rpx;background-color: rgb(235, 232, 235);display: flex;align-items: center;justify-content: center;height: 100rpx;border-radius: 10rpx;">
+      <text class="book-name">{{item.wl.name}}</text>
+    </view>
+    <!-- 词汇数量 -->
+    <view style="margin: 20rpx;display: flex;margin-top: -60rpx;border-radius: 10rpx;">
+      <text class="text-chzs" style="margin-left: 540rpx;">{{item.wl.wordcount}}词</text>
+    </view>
+    <!-- 当前使用人数 -->
+    <view style="margin: 20rpx;background-color: rgb(235, 232, 235);height: 140;display: flex;border-radius: 10rpx;">
+      <text class="text-chzs">当前使用人数</text>
+      <text class="text-chzs" style="margin-left: 400rpx;">{{item.wl.now}}</text>
+    </view>
+    <!-- 累计使用人数 -->
+    <view style="margin: 20rpx;background-color: rgb(235, 232, 235);height: 140;display: flex;border-radius: 10rpx;">
+      <text class="text-chzs">累计使用人数</text>
+      <text class="text-chzs" style="margin-left: 400rpx;">{{item.wl.cumulative}}</text>
+    </view>
+
+    <!-- 图标区域 -->
+    <view style="margin: 20rpx;">
+      <image bind:tap="copyCode" data-code="{{item.wl.code}}" style="padding: 10rpx;margin: 10rpx;" class="image_1" src="/static/images/share/复制.png"/>
+      
+      <image bind:tap="addWLById" data-wlid="{{item.wl.id}}" style="padding: 10rpx;margin: 10rpx;margin-left: 480rpx;" class="image_1" src="/static/images/share/添加.png"/>
+    </view>
+
+  </view>
+</scroll-view>
+
+
+
+
+
+<!-- <scroll-view scroll-y enable-flex style="height: 100vh;">
+  整个区域
+  <view style="height: 500rpx;background-color: rgb(150, 82, 135);margin: 20rpx;border-radius: 10rpx;">
+    
+     头部头像和名称 
+    <view style="margin: 20rpx;background-color: aqua;display: flex;border-radius: 10rpx;">
+      <image style="padding: 10rpx;" class="image_5" src="/static/images/home/preview.jpg"/>
+      <text class="text-name" style="margin-top: 40rpx;margin-left: 50rpx;">大橘</text>
+      <text class="text-xc" style="margin-top: 47rpx; margin-left: 140rpx;">点击查看详情</text>
+    </view>
+
+    词汇集名称
+    <view style="margin: 20rpx;background-color: azure;display: flex;align-items: center;justify-content: center;height: 100rpx;border-radius: 10rpx;">
+      <text class="book-name">词汇集名称</text>
+    </view>
+    词汇数量
+    <view style="margin: 20rpx;display: flex;margin-top: -60rpx;border-radius: 10rpx;">
+      <text class="text-chzs" style="margin-left: 540rpx;">100词</text>
+    </view>
+    当前使用人数
+    <view style="margin: 20rpx;background-color: rgb(49, 95, 126);height: 140;display: flex;border-radius: 10rpx;">
+      <text class="text-chzs">当前使用人数</text>
+      <text class="text-chzs" style="margin-left: 400rpx;">10</text>
+    </view>
+    累计使用人数
+    <view style="margin: 20rpx;background-color: rgb(49, 95, 126);height: 140;display: flex;border-radius: 10rpx;">
+      <text class="text-chzs">累计使用人数</text>
+      <text class="text-chzs" style="margin-left: 400rpx;">20</text>
+    </view>
+
+    图标区域
+    <view style="margin: 20rpx;">
+      <image style="padding: 10rpx;margin: 10rpx;" class="image_1" src="/static/images/share/复制.png"/>
+      <image style="padding: 10rpx;margin: 10rpx;margin-left: 480rpx;" class="image_1" src="/static/images/share/添加.png"/>
+    </view>
+
+  </view>
+</scroll-view> -->

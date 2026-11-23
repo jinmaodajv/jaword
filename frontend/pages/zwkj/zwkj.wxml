@@ -1,0 +1,33 @@
+<!--pages/zwkj/zwkj.wxml-->
+<view class="searchContainer">
+  <view style="background-color: rgb(114, 228, 228);height: 300rpx;margin: 20rpx;border-radius: 10rpx;">
+    <text class="text-zwch">我学习过的汉字读音</text>
+    <text class="text-zczs">学习汉字读音总数</text>
+    <text class="text-zcount">{{kanjiList.length}}</text>
+  </view>
+
+  <block style="height: 80vh;">
+   <!-- 汉字内容展示 -->
+   <view class="showSearchContent">
+    <!-- 显示汉字内容 -->
+     <view class="searchList">
+      <!-- 循环内容 -->
+       <view class="searchItem" wx:for="{{kanjiList}}" wx:key="id">
+        <view bind:tap="toKanji" 
+          data-kid="{{item.kanjiId}}" 
+          data-kanji="{{item.kanji}}" 
+          data-id="{{item.id}}" 
+          data-kana="{{item.kana}}" 
+          style="padding: 30rpx;"
+        >
+          <!-- <text class="content">\n</text> -->
+          <text class="content">{{item.kanji}}</text>
+          <text class="content">{{item.kana}}</text>
+          <!-- <text class="content">\n</text> -->
+          <!-- <text class="content_1">{{item.translate}}</text> -->
+        </view>
+       </view>
+     </view>
+   </view>
+  </block>
+</view>

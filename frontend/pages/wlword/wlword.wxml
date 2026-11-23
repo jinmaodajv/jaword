@@ -1,0 +1,24 @@
+<!--pages/wlword/wlword.wxml-->
+<view class="searchContainer">
+  <block>
+   <!-- 词汇集词汇内容展示 -->
+   <view class="showSearchContent">
+    <!-- 显示词汇内容 -->
+     <view class="searchContent">词汇集中词汇内容:</view>
+     <view class="searchList">
+      <!-- 循环内容 -->
+       <view class="searchItem" wx:for="{{wordList}}" wx:key="id">
+        <view bind:tap="toWord" 
+          data-id="{{item.id}}" 
+          data-clazz="{{item.clazz}}" 
+        >
+          <text class="content">{{item.word}}</text>
+          <text class="content">{{item.kana}}</text>
+          <text class="content">\n</text>
+          <text class="content_1">{{item.translate}}</text>
+        </view>
+       </view>
+     </view>
+   </view>
+  </block>
+</view>

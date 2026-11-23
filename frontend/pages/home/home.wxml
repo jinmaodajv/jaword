@@ -1,0 +1,51 @@
+<!-- 首页 -->
+
+<view class="container">
+  <!-- 搜索区域 -->
+  <view bindtap="toSearch" class="search-box">
+    <image
+          class="image_1"
+          src="/static/images/home/搜索.png"
+    />
+    <text class="text_1">搜索词汇</text>
+  </view>
+
+  <!-- 单词书信息（） -->
+  <view class="book-info" style="height: 490rpx; display: block; box-sizing: border-box; left: 0rpx; top: -57rpx">
+    <text class="book-name" style="position: absolute;left: 45%; top:5%;">{{wordListData.name}}</text>
+    <image style="position: absolute; left: 3%; top: 20%" 
+          class="image_2"
+          src="/static/images/home/preview.jpg"
+    />
+
+    <button 
+      
+      bindtap="onChangeBook" 
+      class="change-book-btn"
+     style="width: 333rpx; height: 94rpx; display: block; box-sizing: border-box; left: 50%; top:33%; position: absolute;">
+    更换单词书
+    </button>
+
+    <text class="text_2" style="position: absolute;left: 50%;top: 65%;">已学单词</text>
+    <text class="text_3" style="position: absolute;left: 80%;top: 65%;">{{wordListData.yxShu}}/{{wordListData.zshu}}</text>
+
+    <progress  
+      style="position: absolute; top: 90%; left: 10%;"
+      percent="{{progress}}" 
+      stroke-width="6" 
+      active-color="#07c160" 
+      class="progress-bar"
+    />
+  </view>
+
+
+  <!-- 开始学习按钮 -->
+  <button 
+    type="primary" 
+    bindtap="onStartLearning" 
+    class="start-learning-btn"
+    data-wlid="{{wordListData.wlId}}"
+  >
+    开始学习
+  </button>
+</view>

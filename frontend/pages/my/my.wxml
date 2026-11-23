@@ -1,0 +1,101 @@
+<!-- 个人中心页 -->
+<view  style="width: 100vh; height: 1600rpx;background-color: rgb(223, 221, 221);overflow-y: auto;">
+
+  <!-- 头像和名称区域 -->
+  <view style="width: 680rpx; height: 200rpx; padding: 10rpx; background-color: rgb(255, 255, 255); position: absolute; left: 31rpx; top: 26rpx;border-radius: 10rpx;">
+    <image wx:if="{{hasUserInfo}}" 
+      bindtap="getNC" 
+      style="position: absolute; left: 24rpx; top: 37rpx" class="image_5" src="{{avatarUrl}}"/>
+    
+    <image wx:else bindtap="getNC" style="position: absolute; left: 24rpx; top: 37rpx" class="image_5" src="/static/images/home/preview.jpg"/>
+
+    <text wx:if="{{hasUserInfo}}" class="text-name" style="position: absolute;top: 38%;left: 28%;">{{uname}}</text>
+
+    <text wx:else class="text-name" style="position: absolute;top: 38%;left: 28%;">用户</text>
+  </view>
+
+  <!-- 下部四个图标区域 -->
+  <view style="width: 680rpx; height: 180rpx;padding: 10rpx; background-color: rgb(255, 255, 255);position: absolute; left: 31rpx; top: 25%;border-radius: 10rpx;display: flex;align-items: center;">
+    <!-- 我的分享情况 -->
+    <view bind:tap="toFXZK" class="v-si">
+      <image
+        class="image_4"
+        src="/static/images/my/分享.png"
+          />
+          <text class="text-si">分享状况</text>
+    </view>
+
+    <!-- 我的收藏 -->
+    <view bindtap="toSC" 
+          class="v-si">
+      <image
+        class="image_6"
+        src="/static/images/my/收藏.png"
+          />
+          <text class="text-si">我的收藏</text>
+    </view>
+
+    <!-- 分享社区 -->
+    <view bind:tap="toFXSQ"
+          class="v-si">
+      <image
+        class="image_4"
+        src="/static/images/my/社区.png"
+          />
+          <text class="text-si">分享社区</text>
+    </view>
+    
+    <!-- 我的信息 -->
+    <view bindtap="toKJDY"
+          class="v-si">
+      <image
+        class="image_6"
+        src="/static/images/my/我的信息.png"
+          />
+          <text class="text-si">汉字读音</text>
+    </view>
+  </view>
+
+  <!-- 来自分享的词汇集 -->
+  <view bindtap="toLZFX" class="v-qt" style="width: 680rpx; height: 120rpx;padding: 10rpx; background-color: rgb(255, 255, 255);position: absolute; left: 31rpx; top: 46%;border-radius: 10rpx;">
+    <image
+      class="image_3"
+      src="/static/images/my/单词书.png"
+    />
+    <text class="text_qt">来自分享单词书</text>
+  </view>
+
+  <!-- 词汇 -->
+  <view style="width: 680rpx; height: 220rpx;padding: 10rpx; background-color: rgb(255, 255, 255);position: absolute; left: 31rpx; top: 62%;border-radius: 10rpx;">
+    <!-- 我掌握的词汇 -->
+    <view catchtap="toCCZW"
+          data-iscc='0'
+          class="v-qt1">
+      <image
+        class="image_3"
+        src="/static/images/my/对.png"
+      />
+      <text class="text_qt">我掌握的词汇</text>
+    </view>
+    <!-- 我做错的词汇 -->
+    <view catchtap="toCCZW"
+          data-iscc='1'
+          class="v-qt1">
+      <image
+        class="image_3"
+        src="/static/images/my/错.png"
+      />
+      <text class="text_qt">我做错的词汇</text>
+    </view>
+  </view>
+
+  <!-- 我要反馈 -->
+  <view bindtap="fk"
+        class="v-qt"  style="width: 680rpx; height: 120rpx;padding: 10rpx; background-color: rgb(255, 255, 255);position: absolute; left: 31rpx; top: 87%;border-radius: 10rpx;">
+    <image
+        class="image_3"
+        src="/static/images/my/反馈.png"
+      />
+      <text class="text_qt">我要反馈</text>
+  </view>
+</view>

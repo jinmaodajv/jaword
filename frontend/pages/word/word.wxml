@@ -1,0 +1,68 @@
+<!--pages/word/word.wxml-->
+<view style="height: 100vh;">
+  <!-- 页面顶部 -->
+  <view style="height: 15vh;background-color: antiquewhite;">
+    <!-- 词汇名称 -->
+    <view bindtap="getMP3" data-src="{{word.sound}}"  style="height: 176rpx; display: block; box-sizing: border-box; width: 565rpx">
+      <text class="text-name" style="position: relative; left: 40rpx; top: 16rpx">{{word.word}}</text>
+      <text class="text-kana" style="position: absolute; left: 150rpx; top: 100rpx">{{word.kana}}</text>
+      <!-- 播放音频图标 -->
+      <image
+            style="width: 50rpx; height: 50rpx; position: absolute; left: 50rpx; top: 100rpx"
+            src="/static/images/word/音频.png"
+      />
+    </view>
+    
+    <view bindtap="toggleFavoritePanel" style="width: 183rpx; height: 176rpx; margin-left: 600rpx; display: block; box-sizing: border-box; position: relative; left: -33rpx; top: -175rpx">
+      <image
+          style="width: 50rpx; height: 50rpx; position: relative; left: 67rpx; top: 64rpx"
+          src="/static/images/word/收藏夹.png"
+    />
+    </view>
+
+  </view>
+
+   <!-- 收藏夹信息面板 -->
+   <view class="souchang" style="{{isFavoritePanelOpen ? 'height: 85vh;' : 'height: 0;'}}">
+    <scroll-view scroll-y style="height: 89%;">
+      <block wx:for="{{wordList}}" wx:key="id">
+        <view 
+          bindtap="setSouChang" 
+          data-index="{{index}}"
+          data-id="{{item.id}}" 
+          data-xz="{{item.state}}" 
+          data-wordcount="{{item.wordcount}}"
+          class="favorite-item" 
+          style="{{item.state ? 'background-color: rgb(229, 250, 240);' : 'background-color: rgb(255, 255, 255);'}}">
+          <text class="favorite-name">{{item.name}}</text>
+          <text class="favorite-count">({{item.wordcount}}个词汇)</text>
+        </view>
+      </block>
+      <button
+          type="primary"
+          style="width: 70%;height: 11%;"
+          bindtap="isSouChang"
+        >
+        确认
+        </button>
+    </scroll-view>
+   </view>
+
+  <!-- 词汇例句 -->
+  <scroll-view scroll-y class="liju"  style="position: relative; left: 0rpx; top: 195rpx">
+    <view class="example-cixing">
+      <text class="text-cixing">{{clazz}}</text>
+    </view>
+
+    <!-- 翻译 -->
+    <view class="example-siyi">
+      <text class="text-siyi">{{word.translate}}</text>
+    </view>
+
+    <!-- 例句 -->
+    <view class="liju-item" wx:for="{{sentence}}" wx:key="id">
+      <text bindtap="getMP3" data-src="{{item.sound}}"   class="example-liju">{{item.sentence}}</text>
+      <text class="example-fanyi">{{item.translate}}</text>
+    </view>
+  </scroll-view>
+</view>

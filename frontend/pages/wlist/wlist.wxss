@@ -1,0 +1,97 @@
+/* pages/wlist/wlist.wxss */
+
+
+.text-lx{
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.text-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+.text-xc{
+  font-size: 15px;
+  color: rgb(78, 53, 53);
+}
+.text-zshu{
+  font-size: 14px;
+  color: rgb(20, 24, 29);
+}
+.text-zs{
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(20, 24, 29);
+}
+
+
+
+
+.v-leixing{
+  width: 100%;
+  margin: 20rpx;
+  background-color: rgb(238, 236, 236);
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+
+
+.v-liebiao{
+  margin: 20rpx;
+  /* background-color: rgb(199, 223, 223); 
+  background-color: rgb(229, 250, 240);*/
+  
+  border-radius: 10rpx;
+}
+.v-name{
+  padding: 10rpx;
+  display: flex;
+  width: 100%;
+  border-radius: 10rpx;
+}
+
+.v-na{
+  padding: 10rpx;
+  display: flex;
+  width: 50%;
+  border-radius: 10rpx;
+}
+.v-xc{
+  display: flex;
+  justify-content:flex-end;
+  width: 50%;
+  margin-right: 20rpx;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+
+.v-zshu{
+  padding: 10rpx;
+  display: flex;
+  width: 100%;
+  border-radius: 10rpx;
+}
+.v-zs{
+  margin: 10rpx;
+  width: 50%;
+  border-radius: 10rpx;
+}
+.v-zsh{
+  display: flex;
+  justify-content:flex-end;
+  width: 50%;
+  margin: 10rpx;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+
+.v-qr{
+  margin-top: 10rpx;
+  width: 100%;
+}
+
+.b-queren{
+  width: 80%;
+}

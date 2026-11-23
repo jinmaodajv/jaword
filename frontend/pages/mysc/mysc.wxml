@@ -1,0 +1,43 @@
+<!--pages/mysc/mysc.wxml-->
+<view style="height: 100vh;">
+
+<scroll-view scroll-y enable-flex style="height: 100vh;">
+  <view
+    class="v-liebiao"
+    wx:for="{{wordListData}}" wx:key="id"
+    bindtap="xuanZhong" 
+    data-id="{{item.id}}"
+    data-state="{{item.state}}"
+    data-code="{{item.code}}"
+    id="{{item.id}}"
+    style="{{item.isxz ? 'background-color: rgb(140, 204, 148);' : 'background-color: rgb(199, 223, 223);'}}"
+  >
+    <view class="v-name">
+      <!-- 词汇集名称 -->
+      <view class="v-na">
+        <text class="text-name">{{item.name}}</text>
+      </view>
+      
+      <!-- 点击查看详情 -->
+      <view class="v-xc">
+        <text catchtap="cxWord"
+              data-id="{{item.id}}" 
+              data-wordcount="{{item.wordcount}}"
+              class="text-xc">点击查看详情</text>
+      </view>
+
+    </view>
+    <view class="v-zshu">
+      <!-- 单词总数 -->
+      <view class="v-zs">
+        <text class="text-zshu">单词总数</text>
+      </view>
+      <!-- 数量 -->
+      <view class="v-zsh">
+        <text class="text-zs">{{item.wordcount}}</text>
+      </view>
+
+    </view>
+  </view>
+</scroll-view>
+</view>

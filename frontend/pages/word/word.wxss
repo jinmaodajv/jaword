@@ -1,0 +1,92 @@
+/* pages/word/word.wxss */
+
+
+.text-name{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.text-kana{
+  font-size: 14px;
+  color: rgb(95, 87, 87);
+}
+
+.souchang{
+  transition: height 1.5s ease;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  margin-bottom: -196rpx;
+}
+
+.favorite-i {
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.liju{
+  position: relative; 
+  left: 0rpx; 
+  top: 193rpx;
+  transition: height 0.3s ease;
+}
+
+.example-liju {
+  margin: 20rpx;
+  font-size: 18px;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.example-fanyi {
+  margin: 20rpx;
+  font-size: 16px;
+  color: #666;
+}
+
+
+.favorite-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.favorite-name {
+  font-size: 16px;
+}
+
+.favorite-count {
+  font-size: 14px;
+  color: #888;
+}
+
+.liju-item{
+  margin: 20rpx;
+  padding: 20rpx;
+  background-color: rgb(208, 223, 223);
+}
+
+.example-cixing{
+  margin: 20rpx;
+  padding: 10rpx;
+  background-color: rgb(229, 243, 243);
+}
+
+.text-cixing{
+  font-size: 12px;
+  color: rgb(95, 87, 87);
+}
+
+.example-siyi{
+  margin: 20rpx;
+  padding: 20rpx;
+  background-color: rgb(227, 220, 230);
+}
+
+.text-siyi{
+  font-size: 15px;
+  color: rgb(107, 204, 196);
+  font-weight: bold;
+}

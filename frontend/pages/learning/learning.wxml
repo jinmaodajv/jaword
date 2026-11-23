@@ -1,0 +1,216 @@
+<!-- 词汇测试页 -->
+<view  wx:if="{{isTest && !isXC}}" style="height: 100vh;">
+  <!-- 词汇名称 -->
+  <view style="height: 50vh; width: 100%;">
+    <text wx:if="{{!isTingYin && testXX[0].xx.length <=40}}" class="text-name" style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%);">{{testXX[0].xx}}</text>
+    <!-- 播放音频图标 -->
+    <image
+      bindtap="getMP3"
+      data-src="{{testXX[0].xx}}"
+      wx:if="{{isTingYin}}"
+      style="width: 60rpx; height: 60rpx; position: absolute; left: 346rpx; top: 267rpx"
+      src="/static/images/learning/声音.png"
+    />
+  </view>
+
+  <view bindtap="setIsrXiangQing" style="height: 50vh;width: 100%;">
+    <button
+          type="{{testXX[1].buttonType}}"
+          style="width: 70%; margin-bottom: 50rpx;"
+          bindtap="xzDC"
+          data-id="{{testXX[1].id}}"
+          data-i="1"
+        >
+        {{testXX[1].xx}}
+    </button>
+    <button
+          type="{{testXX[2].buttonType}}"
+          style="width: 70%; margin-bottom: 50rpx;"
+          bindtap="xzDC"
+          data-id="{{testXX[2].id}}"
+          data-i="2"
+        >
+        {{testXX[2].xx}}
+    </button>
+    <button
+          type="{{testXX[3].buttonType}}"
+          style="width: 70%; margin-bottom: 50rpx;"
+          bindtap="xzDC"
+          data-id="{{testXX[3].id}}"
+          data-i="3"
+        >
+        {{testXX[3].xx}}
+    </button>
+    <button
+          type="{{testXX[4].buttonType}}"
+          style="width: 70%;"
+          bindtap="xzDC"
+          data-id="{{testXX[4].id}}"
+          data-i="4"
+        >
+        {{testXX[4].xx}}
+    </button>
+  </view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 词汇学习页 -->
+<view  wx:if="{{!isXiangQing && !isTest}}" style="height: 100vh;">
+  <!-- 词汇名称 -->
+  <view bindtap="getMP3" data-src="{{wordData[currentIndex].word.sound}}"  style="height: 50vh; width: 100%;">
+    <text class="text-name" style="position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%);">{{wordData[currentIndex].word.word}}</text>
+    <text class="text-kana" style="position: absolute; top: 44%; left: 58%; transform: translate(-50%, -50%);">{{wordData[currentIndex].word.kana}}</text>
+    <!-- 播放音频图标 -->
+    <image
+      style="width: 50rpx; height: 50rpx;position: absolute; top: 44%; left: 42%; transform: translate(-50%, -50%);"
+      src="/static/images/learning/声音.png"
+    />
+  </view>
+
+  <view bindtap="setIsrXiangQing" style="height: 50vh;width: 100%;">
+    <text  class="text-xiangqing" style="position: absolute; top: 55%; left: 50%; transform: translate(-50%, -50%);">点击查看词汇详情</text>
+  </view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 词汇详情页 -->
+<view wx:if="{{(isXiangQing && !isTest) || isXC}}" style="height: 100vh;">
+  <!-- 页面顶部 -->
+  <view style="height: 15vh;background-color: antiquewhite;">
+    <!-- 单击传递音频链接 -->
+    <view bindtap="getMP3" data-src="{{isXC ? wordData[testCount].word.sound : wordData[currentIndex].word.sound}}"  style="height: 176rpx; display: block; box-sizing: border-box; width: 565rpx">
+      <!-- 词汇名称 -->
+      <text class="text-name" style="position: relative; left: 40rpx; top: 16rpx">{{isXC ? wordData[testCount].word.word : wordData[currentIndex].word.word}}</text>
+      <!-- 词汇假名 -->
+      <text class="text-kana" 
+        wx:if="{{isXiangQing || isXC}}"
+        style="position: absolute; left: 140rpx; top: 105rpx">{{isXC ? wordData[testCount].word.kana : wordData[currentIndex].word.kana}}
+      </text>
+      <!-- 播放音频图标 -->
+      <image
+            wx:if="{{isXiangQing || isXC}}"
+            style="width: 50rpx; height: 50rpx;position: absolute;left: 50rpx; top: 100rpx"
+            src="/static/images/word/音频.png"
+      />
+    </view>
+    
+    <view bindtap="toggleFavoritePanel" style="width: 183rpx; height: 176rpx; margin-left: 600rpx; display: block; box-sizing: border-box; position: relative; left: -33rpx; top: -175rpx">
+      <image
+          style="width: 50rpx; height: 50rpx; position: relative; left: 67rpx; top: 64rpx"
+          src="/static/images/word/收藏夹.png"
+    />
+    </view>
+
+  </view>
+
+   <!-- 收藏夹信息面板 -->
+   <view class="souchang" style="{{isFavoritePanelOpen ? 'height: 85vh;' : 'height: 0;'}}">
+    <scroll-view scroll-y style="height: 89%;">
+      <block wx:for="{{wordList}}" wx:key="id">
+        <view 
+        bindtap="setSouChang" 
+        data-index="{{index}}"
+        data-id="{{item.id}}" 
+        data-xz="{{item.state}}" 
+        data-wordcount="{{item.wordcount}}"
+        class="favorite-item" 
+        style="{{item.state ? 'background-color: rgb(229, 250, 240);' : 'background-color: rgb(255, 255, 255);'}}">
+          <text class="favorite-name">{{item.name}}</text>
+          <text class="favorite-count">({{item.wordcount}}个词汇)</text>
+        </view>
+      </block>
+    </scroll-view>
+    <button
+          type="primary"
+          style="width: 70%;height: 11%;"
+          bindtap="isSouChang"
+        >
+        确认
+    </button>
+   </view>
+
+  <!-- 词汇例句 -->
+   <scroll-view scroll-y class="liju"  style="position: relative; left: 0rpx; top: 195rpx">
+    <view class="example-cixing">
+      <text class="text-cixing">{{clazz}}</text>
+    </view>
+
+    <!-- 翻译 -->
+    <view class="example-siyi">
+      <text class="text-siyi">{{isXC ? wordData[testCount].word.translate : wordData[currentIndex].word.translate}}</text>
+    </view>
+
+    <!-- 例句 -->
+    <view class="liju-item" wx:for="{{isXC ? wordData[testCount].sentence : wordData[currentIndex].sentence}}" wx:key="id">
+      <text bindtap="getMP3" data-src="{{item.sound}}"   class="example-liju">{{item.sentence}}</text>
+      <text class="example-fanyi">{{item.translate}}</text>
+    </view>
+
+    <!-- 下一个 -->
+    <view wx:if="{{isXiangQing && !isXC}}">
+        <button
+          type="primary"
+          style="width: 50%;"
+          bindtap="nextWord"
+        >
+        下一个
+        </button>
+    </view>
+    <view wx:if="{{isXC}}">
+        <button
+          type="primary"
+          style="width: 50%;"
+          bindtap="jxTest"
+        >
+        继续
+        </button>
+    </view>
+  </scroll-view>
+</view>

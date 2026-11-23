@@ -1,0 +1,138 @@
+<!--pages/wtest/wtest.wxml-->
+<view style="height: 100vh;background-color: rgb(255, 255, 255);">
+  <!-- 头部 -->
+  <view style="height: 40vh;">
+
+    <!-- 单词书已掌握信息（）height: 220rpx; -->
+    <view class="book-info" style="height: 20vh; width: 700rpx; border-radius: 10rpx; position: relative; left: 26rpx; top: 25rpx">
+      <text class="book-name">{{wordListData.name}}</text>
+      <text class="text_2">已掌握单词</text>
+      <text class="text_3">{{guoCount}}/{{wordListData.yxShu}}</text>
+
+      <progress    
+        percent="{{progress}}" 
+        stroke-width="6" 
+        active-color="#07c160" 
+        class="progress-bar"
+      />
+    </view>
+
+    <view style="height: 2.5vh;">
+    </view> 
+
+    <!-- 四个类型 -->
+    <view style="height: 15vh; margin-left: 10rpx; margin-right: 10rpx; border-radius: 10rpx; background-color: rgb(248, 245, 246); display: block; box-sizing: border-box">
+
+        <!-- 其他测试类型 -->
+        <view class="qtcslx" style="height: 100%; display: flex; box-sizing: border-box">
+          <!-- 错题专项 -->
+          <view bindtap="toCTZX" 
+                data-isctzx="1"
+                class="cyzt-1">
+            <image
+              class="image_6"
+              src="/static/images/wtest/错题专项.png"
+            />
+            <text class="font_2">错题专项</text>
+          </view>
+          <!-- 已学复习 -->
+          <view bindtap="toYXFX"
+                class="cyzt">
+            <image 
+              class="image_6"
+              src="/static/images/wtest/已学复习.png"
+            />
+            <text class="font_2">已学复习</text>
+          </view>
+          <!-- 综合测试 -->
+          <view bindtap="toCTZX" 
+                data-isctzx="0"
+                class="cyzt" >
+            <image
+              class="image_6"
+              src="/static/images/wtest/综合测试.png"
+            />
+            <text class="font_2">综合测试</text>
+          </view>
+          <!-- 听音速记 -->
+          <view bindtap="toTYSJ"
+                class="cyzt">
+            <image
+              class="image_6"
+              src="/static/images/wtest/听音速记.png"
+            />
+            <text class="font_2">听音速记</text>
+          </view>
+        </view>
+    </view>
+  </view>
+
+
+  <!-- 测试类型 -->
+  <view style="height: 60vh;background-color: rgb(226, 238, 238);margin: 20rpx;border-radius: 10rpx;">
+    <button
+          type="primary"
+          style="width: 40%; position: relative; left: -200rpx; top: 26rpx"
+          bindtap="toTest"
+          data-testclazz="1"
+        >
+        词汇选释义
+    </button>
+    <button 
+          type="primary"
+          style="width: 40%; position: relative; left: 200rpx; top: -83rpx"
+          bindtap="toTest"
+          data-testclazz="2"
+        >
+        释义选词汇
+    </button>
+    <button 
+          type="primary"
+          style="width: 40%; position: relative; left: -200rpx; top: -33rpx"
+          bindtap="toTest"
+          data-testclazz="3"
+        >
+        释义选假名
+    </button>
+    <button 
+          type="primary"
+          style="width: 40%; position: relative; left: 200rpx; top: -141rpx"
+          bindtap="toTest"
+          data-testclazz="4"
+        >
+        假名选释义
+    </button>
+    <button 
+          type="primary"
+          style="width: 40%; position: relative; left: -200rpx; top: -92rpx"
+          bindtap="toTest"
+          data-testclazz="5"
+        >
+        假名选词汇
+    </button>
+    <button 
+          type="primary"
+          style="width: 40%; position: relative; left: 200rpx; top: -200rpx"
+          bindtap="toTest"
+          data-testclazz="6"
+        >
+        词汇选假名
+    </button>
+    <button 
+          type="primary"
+          style="width: 40%; position: relative; left: -200rpx; top: -150rpx"
+          bindtap="toTest"
+          data-testclazz="7"
+        >
+        发音选释义
+    </button>
+    <button 
+          type="primary"
+          style="width: 40%; position: relative; left: 200rpx; top: -258rpx"
+          bindtap="toTest"
+          data-testclazz="8"
+        >
+        释义选发音
+    </button>
+  </view>
+</view>

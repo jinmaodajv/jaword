@@ -1,0 +1,50 @@
+<!--pages/zwhzc/zwhzc.wxml-->
+<view class="searchContainer">
+  <!-- <view style="position: fixed; background-color: rgb(255, 255, 255); height: 40rpx; width: 90%; border-radius: 10rpx; display: block; box-sizing: border-box; left: 38rpx; top: -3rpx">
+  </view> -->
+  <view wx:if="{{isCC == 1}}" style="position: fixed;background-color: aqua;height: 120rpx;width: 90%;margin: 20rpx;border-radius: 10rpx;background-color: transparent;">
+      <text class="content_3">做错次数：</text>
+  </view>
+
+  <view wx:if="{{isCC == 1}}" style="background-color: rgb(114, 228, 228);height: 300rpx;margin: 20rpx;border-radius: 10rpx;">
+    <text class="text-zczd">做错最多词汇</text>
+    <text class="text-word">{{wordList[0].word}}</text>
+    <text class="text-translate">{{wordList[0].translate}}</text>
+    <text class="text-count">{{wordList[0].sound}}</text>
+    <text class="text-zczs">做错词汇总数</text>
+    <text class="text-zcount">{{wordList.length}}</text>
+  </view>
+
+  <view wx:if="{{isCC == 0}}" style="background-color: rgb(114, 228, 228);height: 300rpx;margin: 20rpx;border-radius: 10rpx;">
+    <text class="text-zwch">我掌握的词汇</text>
+    <text class="text-zczs">掌握词汇总数</text>
+    <text class="text-zcount">{{wordList.length}}</text>
+  </view>
+
+
+  
+  <block style="height: 80vh;">
+   <!-- 词汇集词汇内容展示 -->
+   <view class="showSearchContent">
+    <!-- 显示词汇内容 -->
+     <!-- <view class="searchContent">词汇集中词汇内容:</view> -->
+     <!-- style="position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%);" -->
+
+     <view class="searchList">
+      <!-- 循环内容 -->
+       <view class="searchItem" wx:for="{{wordList}}" wx:key="id">
+        <view bind:tap="toWord" 
+          data-id="{{item.id}}" 
+          data-clazz="{{item.clazz}}" 
+        >
+          <text class="content">{{item.word}}</text>
+          <text class="content">{{item.kana}}</text>
+          <text wx:if="{{isCC == 1}}" class="content_2">{{item.sound}}</text>
+          <text class="content">\n</text>
+          <text class="content_1">{{item.translate}}</text>
+        </view>
+       </view>
+     </view>
+   </view>
+  </block>
+</view>

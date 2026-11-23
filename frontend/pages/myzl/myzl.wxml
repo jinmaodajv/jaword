@@ -1,0 +1,17 @@
+<!--pages/myzl/myzl.wxml-->
+<!-- 获取头像昵称 -->
+<view>
+  <view class="v1">
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image wx:if="{{avatarUrl}}" class="avatar" src="{{avatarUrl}}"></image>
+    <image wx:else="{{!avatarUrl}}" class="avatar" src="/static/images/home/preview.jpg"></image>
+    </button> 
+  </view>
+  <view class="v2">
+    <text class="ni">昵称</text>
+    <input type="nickname" class="weui-input" bindblur ="getValue" placeholder="请输入昵称"/>
+  </view>
+  <view class="v3">
+    <button class="bu" bind:tap="queren" >确认</button>
+  </view>
+</view>

@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/share/share",
+    "pages/my/my",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/learning/learning",
+    "pages/word/word",
+    "pages/search/search",
+    "pages/wtest/wtest",
+    "pages/jutitest/jutitest",
+    "pages/ctzx/ctzx",
+    "pages/yxfx/yxfx",
+    "pages/tysj/tysj",
+    "pages/wlist/wlist",
+    "pages/wlword/wlword",
+    "pages/myzl/myzl",
+    "pages/mysc/mysc",
+    "pages/zwhzc/zwhzc",
+    "pages/lzfx/lzfx",
+    "pages/fxsq/fxsq",
+    "pages/fxzk/fxzk",
+    "pages/zwkj/zwkj",
+    "pages/kanji/kanji"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#eef",
+    "navigationBarBackgroundColor": "#eee",
+    "navigationBarTitleText": "日语词汇学习",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "selectedColor": "#ff8a06",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "resources/icon/home.png",
+        "selectedIconPath": "resources/icon/home_selected.png"
+      },
+      {
+        "pagePath": "pages/wtest/wtest",
+        "text": "测试",
+        "iconPath": "resources/icon/share.png",
+        "selectedIconPath": "resources/icon/share_selected.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "resources/icon/my.png",
+        "selectedIconPath": "resources/icon/my_selected.png"
+      }
+    ]
+  }
+}

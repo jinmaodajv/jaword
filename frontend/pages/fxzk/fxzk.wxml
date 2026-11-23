@@ -1,0 +1,180 @@
+<!--pages/fxzk/fxzk.wxml-->
+  <!-- 最大累计 -->
+  <view class="noworcum" wx:key="id" style="{{isZDLJ ? 'height: 500rpx;' : 'height: 0;'}}">
+    
+    <!-- 头部头像和名称 -->
+    <view style="margin: 20rpx;background-color: rgb(201, 196, 201);display: flex;border-radius: 10rpx;">
+      <image wx:if="{{isZDLJ}}" style="margin: 20rpx;" class="image_5" src="{{avatar}}"/>
+      <text wx:if="{{isZDLJ}}" class="text-name" style="margin-top: 40rpx;margin-left: 50rpx;">{{uname}}</text>
+      <text wx:if="{{isZDLJ}}" catchtap="setZDLJ" 
+            class="text-xc" style="margin-top: 47rpx; margin-left: 180rpx;">点击切换</text>
+    </view>
+
+    <!-- 提示 -->
+    <view style="margin-left: 20rpx;">
+      <text wx:if="{{isZDLJ}}" class="text-zs">当前最大累计使用人数</text>
+    </view>
+    <!-- 词汇集名称 -->
+    <view wx:if="{{isZDLJ}}" style="margin: 20rpx;background-color: rgb(78, 245, 245);display: flex;align-items: center;justify-content: center;height: 100rpx;border-radius: 10rpx;">
+      <text wx:if="{{isZDLJ}}" class="book-name">{{maxCumulativewl.name}}</text>
+    </view>
+    <!-- 词汇数量 -->
+    <view style="margin: 20rpx;display: flex;margin-top: -60rpx;border-radius: 10rpx;">
+      <text wx:if="{{isZDLJ}}" class="text-chzs" style="margin-left: 540rpx;">{{maxCumulativewl.wordcount}}词</text>
+    </view>
+    <!-- 当前使用人数 -->
+    <view style="margin: 20rpx;background-color: rgb(255, 255, 255);height: 140;display: flex;border-radius: 10rpx;">
+      <text wx:if="{{isZDLJ}}" class="text-chzs">当前使用人数</text>
+      <text wx:if="{{isZDLJ}}" class="text-chzs" style="margin-left: 400rpx;">{{maxCumulativewl.now}}</text>
+    </view>
+    <!-- 累计使用人数 -->
+    <view style="margin: 20rpx;background-color: rgb(255, 255, 255);height: 140;display: flex;border-radius: 10rpx;">
+      <text wx:if="{{isZDLJ}}" class="text-chzs">累计使用人数</text>
+      <text wx:if="{{isZDLJ}}" class="text-chzs" style="margin-left: 400rpx;">{{maxCumulativewl.cumulative}}</text>
+
+    </view>
+  </view>
+
+
+  <!-- 最大当前 -->
+  <view class="noworcum" wx:key="id" style="{{(!isZDLJ&&isZDDC) ? 'height: 500rpx;' : 'height: 0;'}}">
+    
+    <!-- 头部头像和名称 -->
+    <view style="margin: 20rpx;background-color: rgb(201, 196, 201);display: flex;border-radius: 10rpx;">
+      <image wx:if="{{!isZDLJ&&isZDDC}}" style="margin: 20rpx;" class="image_5" src="{{avatar}}"/>
+      <text wx:if="{{!isZDLJ&&isZDDC}}" class="text-name" style="margin-top: 40rpx;margin-left: 50rpx;">{{uname}}</text>
+      <text wx:if="{{!isZDLJ&&isZDDC}}" catchtap="setZDLJ" 
+            class="text-xc" style="margin-top: 47rpx; margin-left: 180rpx;">点击切换</text>
+    </view>
+
+    <!-- 提示 -->
+    <view style="margin-left: 20rpx;">
+      <text wx:if="{{!isZDLJ&&isZDDC}}" class="text-zs">当前最大当前使用人数</text>
+    </view>
+    <!-- 词汇集名称 -->
+    <view wx:if="{{!isZDLJ&&isZDDC}}" style="margin: 20rpx;background-color: rgb(78, 245, 245);display: flex;align-items: center;justify-content: center;height: 100rpx;border-radius: 10rpx;">
+      <text wx:if="{{!isZDLJ&&isZDDC}}" class="book-name">{{maxNowWL.name}}</text>
+    </view>
+    <!-- 词汇数量 -->
+    <view style="margin: 20rpx;display: flex;margin-top: -60rpx;border-radius: 10rpx;">
+      <text wx:if="{{!isZDLJ&&isZDDC}}" class="text-chzs" style="margin-left: 540rpx;">{{maxNowWL.wordcount}}词</text>
+    </view>
+    <!-- 当前使用人数 -->
+    <view style="margin: 20rpx;background-color: rgb(255, 255, 255);height: 140;display: flex;border-radius: 10rpx;">
+      <text wx:if="{{!isZDLJ&&isZDDC}}" class="text-chzs">当前使用人数</text>
+      <text wx:if="{{!isZDLJ&&isZDDC}}" class="text-chzs" style="margin-left: 400rpx;">{{maxNowWL.now}}</text>
+    </view>
+    <!-- 累计使用人数 -->
+    <view style="margin: 20rpx;background-color: rgb(255, 255, 255);height: 140;display: flex;border-radius: 10rpx;">
+      <text wx:if="{{!isZDLJ&&isZDDC}}" class="text-chzs">累计使用人数</text>
+      <text wx:if="{{!isZDLJ&&isZDDC}}" class="text-chzs" style="margin-left: 400rpx;">{{maxNowWL.cumulative}}</text>
+    </view>
+  </view>
+
+
+
+  <!-- 当前总 -->
+  <view class="noworcum" wx:key="id" style="{{(!isZDLJ&&!isZDDC) ? 'height: 500rpx;' : 'height: 0;'}}">
+    
+    <!-- 头部头像和名称 -->
+    <view style="margin: 20rpx;background-color: rgb(201, 196, 201);display: flex;border-radius: 10rpx;">
+      <image wx:if="{{!isZDLJ&&!isZDDC}}" style="margin: 20rpx;" class="image_5" src="{{avatar}}"/>
+      <text wx:if="{{!isZDLJ&&!isZDDC}}" class="text-name" style="margin-top: 40rpx;margin-left: 50rpx;">{{uname}}</text>
+      <text wx:if="{{!isZDLJ&&!isZDDC}}" catchtap="setZDLJ" 
+            class="text-xc" style="margin-top: 47rpx; margin-left: 180rpx;">点击切换</text>
+    </view>
+
+    <!-- 提示 -->
+    <view style="margin-left: 20rpx;">
+      <text wx:if="{{!isZDLJ&&!isZDDC}}" class="text-zs">全部单词书使用人数总数</text>
+    </view>
+    <!-- 词汇集名称 -->
+    <view wx:if="{{!isZDLJ&&!isZDDC}}" style="margin: 20rpx;background-color: rgb(78, 245, 245);display: flex;align-items: center;justify-content: center;height: 100rpx;border-radius: 10rpx;">
+      <text wx:if="{{!isZDLJ&&!isZDDC}}" class="book-name">全部单词书数据</text>
+    </view>
+    <!-- 词汇数量 -->
+    <view style="margin: 20rpx;display: flex;margin-top: -60rpx;border-radius: 10rpx;">
+      <text wx:if="{{!isZDLJ&&!isZDDC}}" class="text-chzs" style="margin-left: 540rpx;">{{sumWordCount}}词</text>
+    </view>
+    <!-- 当前使用人数 -->
+    <view style="margin: 20rpx;background-color: rgb(255, 255, 255);height: 140;display: flex;border-radius: 10rpx;">
+      <text wx:if="{{!isZDLJ&&!isZDDC}}" class="text-chzs">总当前使用人数</text>
+      <text wx:if="{{!isZDLJ&&!isZDDC}}" class="text-chzs" style="margin-left: 400rpx;">{{sumNow}}</text>
+    </view>
+    <!-- 累计使用人数 -->
+    <view style="margin: 20rpx;background-color: rgb(255, 255, 255);height: 140;display: flex;border-radius: 10rpx;">
+      <text wx:if="{{!isZDLJ&&!isZDDC}}" class="text-chzs">总累计使用人数</text>
+      <text wx:if="{{!isZDLJ&&!isZDDC}}" class="text-chzs" style="margin-left: 400rpx;">{{sumCumulative}}</text>
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+<view style="height: 100vh;">
+  <scroll-view scroll-y enable-flex style="height: 100vh;">
+  <view
+    class="v-liebiao"
+    wx:for="{{wordListData}}" wx:key="id"
+    bindtap="xuanZhong" 
+    data-id="{{item.id}}"
+    id="{{item.id}}"
+    style="{{item.isxz ? 'background-color: rgb(140, 204, 148);' : 'background-color: rgb(199, 223, 223);'}}"
+  >
+    <view class="v-name">
+      <!-- 词汇集名称 -->
+      <view class="v-na">
+        <text class="text-name">{{item.name}}</text>
+      </view>
+      
+      <!-- 点击查看详情 -->
+      <view class="v-xc">
+        <text catchtap="cxWord"
+              data-id="{{item.id}}" 
+              data-wordcount="{{item.wordcount}}"
+              class="text-xc">点击查看详情</text>
+      </view>
+
+    </view>
+    <view class="v-zshu">
+      <!-- 单词总数 -->
+      <view class="v-zs">
+        <text class="text-zshu">单词总数</text>
+      </view>
+      <!-- 数量 -->
+      <view class="v-zsh">
+        <text class="text-zs">{{item.wordcount}}</text>
+      </view>
+    </view>
+
+    <view class="v-zshu">
+      <!-- 当前使用人数 -->
+      <view class="v-zs">
+        <text class="text-zshu">当前使用人数</text>
+      </view>
+      <!-- 数量 -->
+      <view class="v-zsh">
+        <text class="text-zs">{{item.now}}</text>
+      </view>
+    </view>
+
+    <view class="v-zshu">
+      <!-- 累计使用人数 -->
+      <view class="v-zs">
+        <text class="text-zshu">累计使用人数</text>
+      </view>
+      <!-- 数量 -->
+      <view class="v-zsh">
+        <text class="text-zs">{{item.cumulative}}</text>
+      </view>
+    </view>
+  </view>
+  </scroll-view>
+</view>

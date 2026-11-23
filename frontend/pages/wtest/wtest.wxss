@@ -1,0 +1,113 @@
+/* pages/wtest/wtest.wxss */
+
+
+
+
+
+/* 单词书信息   width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+  height: 493rpx;
+  display: block; 
+  box-sizing: border-box; 
+  background-color: rgb(212, 211, 211); position: relative; 
+  left: 0rpx; top: -57rpx;
+  padding: 20rpx;  */
+.book-info {
+  width: 80%;
+  text-align: center;
+
+  height: 493rpx;
+  background-color: rgb(197, 196, 196); 
+ 
+}
+
+/*   position: relative;  left: 143rpx; 
+  top: -256rpx margin-bottom: 10px;*/
+.book-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  position: relative; 
+  left: 138rpx; 
+  top: 2rpx
+}
+/*   position: relative; 
+  left: 126rpx; 
+  top: -153rpx */
+.text_2 {
+  position: relative; 
+  left: -186rpx; 
+  top: 80rpx
+}
+
+/*   position: relative; 
+  left: 187rpx; 
+  top: -153rpx */
+.text_3 {
+  position: relative;
+   left: 97rpx;
+    top: 80rpx
+}
+
+.progress-bar {
+  width: 80%;
+  margin: 0 auto;
+  left: -3rpx; 
+  top: 111rpx;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+.text-testClazz{
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(100, 58, 58);
+}
+
+.image_6 {
+  width: 64rpx;
+  height: 64rpx;
+}
+.font_2 {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color: #000000;
+}
+.qtcslx{
+  
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(222, 226, 226);
+  margin: 20rpx;
+  border-radius: 10rpx;
+}
+
+.cyzt{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30rpx;
+}
+
+.cyzt-1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30rpx;
+  margin-left: 60rpx;
+}
+
+.image_7{
+  width: 50%;
+  height: 100%;
+  border-radius: 10rpx;
+}

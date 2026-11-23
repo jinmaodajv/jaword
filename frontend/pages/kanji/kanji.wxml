@@ -1,0 +1,43 @@
+<!--pages/kanji/kanji.wxml-->
+<view style="height: 100vh;">
+  <!-- 页面顶部 -->
+  <view style="height: 15vh;background-color: antiquewhite;">
+    <!-- 词汇名称 -->
+    <!-- <view bindtap="getMP3" data-src="{{word.sound}}"  style="height: 176rpx; display: block; box-sizing: border-box; width: 565rpx"> -->
+    <view style="height: 176rpx; display: block; box-sizing: border-box; width: 565rpx">
+      <text class="text-name" style="position: relative; left: 40rpx; top: 20rpx">{{kanji}}</text>
+      <text class="text-kana" style="position: absolute; left: 200rpx; top: 25rpx">{{kkKana}}</text>
+    </view>
+    
+    <!-- <view bindtap="toggleFavoritePanel" style="width: 183rpx; height: 176rpx; margin-left: 600rpx; display: block; box-sizing: border-box; position: relative; left: -33rpx; top: -175rpx">
+    </view> -->
+
+  </view>
+
+  <!-- 假名 -->
+  <!-- style="position: relative; left: 0rpx; top: 195rpx" -->
+  <scroll-view scroll-x style="margin:20rpx;padding: 10rpx;background-color: rgb(229, 243, 243);width: 694rpx;">
+    <view class="example-kanalist" wx:for="{{kana}}" wx:key="id">
+      <text bindtap="getWord" data-kkid="{{item.id}}"  data-kkkana="{{item.kana}}" class="text-kanalist">{{item.kana}}</text>
+    </view>
+
+
+    <!-- <text class="text-kanalist" wx:for="{{kana}}" wx:key="id">{{item.kana}}</text> -->
+  </scroll-view>
+
+  <!-- 假名词汇信息 -->
+  <scroll-view scroll-y class="liju"  style="position: relative; left: 0rpx; top: 0rpx">
+
+    <!-- 词汇 -->
+    <view class="liju-item" wx:for="{{kanaWord}}" wx:key="id">
+      <text class="example-liju">{{item.word}} ------ {{item.kana}}</text>
+      <text class="example-fanyi">{{item.translate}}</text>
+      <!-- <text wx:if="{{itme.word == null}}" class="example-liju">暂未收录该汉字发音的词汇</text> -->
+    </view>
+
+    <view class="liju-item" wx:if="{{isNull}}">
+      <text class="example-liju">暂未收录该汉字发音的词汇</text>
+    </view>
+
+  </scroll-view>
+</view>

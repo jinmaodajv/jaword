@@ -1,0 +1,116 @@
+/* pages/home/home.wxss */
+
+/* 页面容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+}
+
+/* 搜索框 */
+.search-box {
+  width: 100%;
+  margin-bottom: 10px;
+  height: 80rpx;
+  background-color: rgb(238, 236, 234);
+  position: relative; 
+  left: 0rpx;
+  top: -15rpx;
+}
+
+.image_1 {
+  border-radius: 50%;
+  margin-top: 14rpx;
+  margin-left: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.text_1 {
+  color: rgb(88, 86, 86);
+  position: relative; 
+  left: 10rpx; 
+  top: -15rpx
+}
+
+
+/* 单词书信息 */
+.book-info {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+  width: 685rpx; 
+  height: 493rpx; 
+  display: block; 
+  box-sizing: border-box; 
+  background-color: rgb(212, 211, 211); position: relative; 
+  left: 0rpx; top: -57rpx;
+  padding: 20rpx;
+}
+
+.image_2 {
+  border-radius: 16rpx;
+  width: 300rpx;
+  height: 300rpx;
+  position: relative;
+  left: -252rpx; 
+  top: 64rpx
+}
+
+.book-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.change-book-btn {
+  width: 80%;
+  margin-bottom: 20px;
+  border: 1px solid #07c160;
+  color: #07c160;
+  font-size: 16px;
+  position: relative; 
+  left: 163rpx; 
+  top: -204rpx; 
+  width: 326rpx; 
+  height: 80rpx; 
+  display: block; 
+  box-sizing: border-box
+}
+
+.text_2 {
+  position: relative; 
+  left: 126rpx; 
+  top: -153rpx
+}
+
+.text_3 {
+  position: relative; 
+  left: 187rpx; 
+  top: -153rpx
+}
+
+.progress-bar {
+  width: 80%;
+  margin: 0 auto;
+  position: relative; 
+  left: 0rpx; 
+  top: -73rpx
+}
+
+/* 按钮样式 */
+
+
+.start-learning-btn {
+  width: 80%;
+  font-size: 16px;
+  background-color: #07c160;
+  color: #fff;
+  position: relative; 
+  left: 0rpx; 
+  top: -115rpx
+}

@@ -1,0 +1,62 @@
+<view class="searchContainer">
+  <!-- 头部搜索区域 -->
+  <view class="header">
+    <view class="searchInput">
+      <!-- 搜索中/日 -->
+      <view  class="zr" bind:tap="zr">
+        <text wx:if="{{zr}}" style="position: relative; left: 5rpx; top: 5rpx">中</text>
+        <text wx:else>日</text>
+      </view>
+      <text class="iconfont icon-zhankai searchIcon" style="position: absolute; left: 43rpx; top: 10rpx"></text>
+      <!-- 输入框 -->
+      <input style="margin-left: 80rpx; width: 535rpx; height: 59rpx; display: block; box-sizing: border-box" type="text" value="{{searchContent}}" placeholder="{{placeholderContent}}" placeholder-class="placeholder" bindinput="handleInputChange" bindconfirm="carriageReturn"/>
+
+      <!-- 清空输入内容 -->
+      <text class="clear" bindtap="clearSearchContent" hidden="{{!searchContent}}">X</text>
+    </view>
+    <text class="cancel" bind:tap="toHome">取消</text>
+  </view>
+
+  <block wx:if='{{searchList.length}}'>
+   <!-- 搜索内容展示 -->
+   <view class="showSearchContent">
+    <!-- 显示搜索内容 -->
+     <view class="searchContent">搜索内容: {{searchContent}}</view>
+     <view class="searchList">
+
+      <!-- 循环返回内容 -->
+       <view class="searchItem" wx:for="{{searchList}}" wx:key="id">
+        <view bind:tap="toWord" 
+        data-id="{{item.id}}" 
+        data-word="{{item.word}}" 
+        data-translate="{{item.translate}}" 
+        data-clazz="{{item.clazz}}" 
+        data-kana="{{item.kana}}" 
+        data-sound="{{item.sound}}"
+        data-zr="{{zr}}">
+          <text class="content">{{item.word}}</text>
+          <text class="content">{{item.kana}}</text>
+          <text class="content">\n</text>
+          <text class="content_1">{{item.translate}}</text>
+        </view>
+       </view>
+
+     </view>
+   </view>
+  </block>
+
+
+  <block wx:else>
+    <!-- 搜索历史记录 -->
+    <view class="history" wx:if="{{historyList.length}}">
+      <view class="title">历史</view>
+      <view class="historyItem" wx:for="{{historyList}}" wx:key="{{item}}">
+        <!-- {{item}} -->
+        <view bind:tap="record" data-record="{{item}}">{{item}}</view>
+      </view>
+      <!-- 删除 -->
+      <text class="iconfont icon-shanchu delete" bindtap="deleteSearchHistory"></text>
+    </view>
+
+  </block>
+</view>

@@ -1,0 +1,58 @@
+<!--pages/wlist/wlist.wxml-->
+<view style="height: 100vh;">
+
+  <view class="v-leixing"  style="height: 5vh;">
+    <text wx:if="{{isytzd}}" class="text-lx">系统自带</text>
+    <text wx:if="{{isndsc}}" class="text-lx">您的收藏</text>
+    <text wx:if="{{isyhfx}}" class="text-lx">用户分享</text>
+  </view>
+
+  <scroll-view scroll-y enable-flex style="height: 90vh;">
+    <view
+      class="v-liebiao"
+      wx:for="{{wordListData}}" wx:key="id"
+      bindtap="xuanZhong" 
+      data-id="{{item.id}}"
+      id="{{item.id}}"
+      style="{{item.state ? 'background-color: rgb(140, 204, 148);' : 'background-color: rgb(199, 223, 223);'}}"
+    >
+      <view class="v-name">
+        <!-- 词汇集名称 -->
+        <view class="v-na">
+          <text class="text-name">{{item.name}}</text>
+        </view>
+        
+        <!-- 点击查看详情 -->
+        <view class="v-xc">
+          <text bindtap="cxWord"
+                data-id="{{item.id}}" 
+                data-wordcount="{{item.wordcount}}"
+                class="text-xc">点击查看详情</text>
+        </view>
+
+      </view>
+      <view class="v-zshu">
+        <!-- 单词总数 -->
+        <view class="v-zs">
+          <text class="text-zshu">单词总数</text>
+        </view>
+        <!-- 数量 -->
+        <view class="v-zsh">
+          <text class="text-zs">{{item.wordcount}}</text>
+        </view>
+
+      </view>
+    </view>
+  </scroll-view>
+  <view class="v-qr" style="height: 5vh;">
+    <!-- 确认按钮 -->
+    <button 
+      type="primary" 
+      bindtap="updateUsed" 
+      class="b-queren"
+      data-wlid="{{wordListData.wlId}}"
+    >
+      确认
+    </button>
+  </view>
+</view>

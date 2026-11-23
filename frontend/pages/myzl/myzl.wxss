@@ -1,0 +1,53 @@
+/* pages/myzl/myzl.wxss */
+/* 获取头像昵称 */
+.v1 {
+  height: 300rpx;
+  margin: 10rpx;
+  padding: 20rpx;
+}
+.v2{
+  width: 709rpx;
+  height: 106rpx;
+  display: flex;
+  margin: 20rpx;
+  color: #0c0f01;
+  border: 5rpx solid #3d422b;
+}
+.v3 {
+  width: 709rpx;
+  height: 106rpx;
+  margin: 20rpx;
+  padding: 250rpx;
+}
+.bu {
+  width: 250rpx;
+  padding: 20rpx;
+  color: #082b3b;
+  border: 8rpx solid #3d422b;
+  position: absolute; 
+  top: 65%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.ni {
+  margin:20rpx;
+  font-weight: bold;
+}
+.avatar-wrapper {
+  width: 100%;
+  height: 100%;
+  margin: 10rpx;
+  padding: -100rpx;
+  background: #ffffff;
+}
+.avatar {
+  border-radius: 50%;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 10rpx; 
+  padding: 10rpx;
+}
+.weui-input {
+  margin:20rpx;
+}
