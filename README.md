@@ -12,29 +12,14 @@ jaword是一个日语词汇学习小程序项目，其后端框架使用Spring B
 ## 演示
 
 <!-- 可放置截图、GIF 或在线 Demo 链接 -->
-首页
-![演示截图](http://cdn.jaword.icu/jaword/docs/images/首页.jpg)
-
-学习词汇
-![演示截图](http://cdn.jaword.icu/jaword/docs/images/学习词汇.png)
-
-词汇详情
-![演示截图](http://cdn.jaword.icu/jaword/docs/images/词汇详情.png)
-
-测试
-![演示截图](http://cdn.jaword.icu/jaword/docs/images/测试.png)
-
-听音速记
-![演示截图](http://cdn.jaword.icu/jaword/docs/images/听音速记.png)
-
-日语汉字
-![演示截图](http://cdn.jaword.icu/jaword/docs/images/汉字发音.png)
-
-个人主页
-![演示截图](http://cdn.jaword.icu/jaword/docs/images/我的.png)
-
-搜索
-![演示截图](http://cdn.jaword.icu/jaword/docs/images/搜索.png)
+![首页演示截图](http://cdn.jaword.icu/jaword/docs/images/首页.jpg)
+![学习词汇演示截图](http://cdn.jaword.icu/jaword/docs/images/学习词汇.png)
+![词汇详情演示截图](http://cdn.jaword.icu/jaword/docs/images/词汇详情.png)
+![测试演示截图](http://cdn.jaword.icu/jaword/docs/images/测试.png)
+![听音速记演示截图](http://cdn.jaword.icu/jaword/docs/images/听音速记.png)
+![日语汉字演示截图](http://cdn.jaword.icu/jaword/docs/images/汉字发音.png)
+![个人主页演示截图](http://cdn.jaword.icu/jaword/docs/images/我的.png)
+![搜索演示截图](http://cdn.jaword.icu/jaword/docs/images/搜索.png)
 
 ## 项目结构
 
